@@ -38,12 +38,13 @@ function comprobarConstraseña() {
         mensaje3.innerHTML = "Debe tener al menos 8 caracteres"
         console.log("funciona")
     }
-    else if(){
+    if(isNaN(contra[i])){
+            mensaje3.innerHTML = "Debe tener al menos 1 número"
+    } 
+    
 
-    }
+    if(){}
 
-    else if(){
-        
     }
     else{
         mensaje3.innerHTML = ""
