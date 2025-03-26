@@ -24,8 +24,8 @@ function comprobarMail() {
     if (!mailIng.value.includes("@")){
         mensaje2.innerHTML = "Mail inválido"
         console.log("funciona")
-
     }
+
     else{
         mensaje2.innerHTML = ""
 
@@ -36,20 +36,29 @@ function comprobarMail() {
 function comprobarConstraseña() {
     if (contra.value.length < 8){
         mensaje3.innerHTML = "Debe tener al menos 8 caracteres"
-        console.log("funciona")
-    }
-    if(isNaN(contra[i])){
-            mensaje3.innerHTML = "Debe tener al menos 1 número"
-    } 
-    
-
-    if(){}
-
+        console.log("funciona1")
     }
     else{
         mensaje3.innerHTML = ""
-
+        console.log("funciona3")
     }
+
+    console.log(contra.value[i])
+    console.log(isNaN(contra.value[i]))
+    
+    for(var i = 0; i < contra.value.length; i++){
+        if(isNaN(contra.value[i])){
+        mensaje3.innerHTML += "Debe tener al menos 1 número"
+        console.log("funciona2 un num")
+        }
+        else{
+            mensaje3.innerHTML -= "Debe tener al menos 1 número"
+            console.log("funciona2 esta ok")
+        }
+    
+    }
+
+  
 }
 
 
