@@ -18,14 +18,16 @@ form{
     padding: 3%;
     border-radius: 20px;
     margin-bottom: 17%;
-
+  
     input:hover{
         background-color: rgba(0, 0, 0, 0.041);
     }
 }
 
 input:valid {
-    color: green; }
+    color: green; 
+}
+
 .but{
     display: flex;
     justify-content: center;

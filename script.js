@@ -7,7 +7,6 @@ var mensaje2 = document.getElementById("mensaje2")
 var mensaje3 = document.getElementById("mensaje3")
 var mensajeFin = document.getElementById("mensajeFin")
 var boton = document.getElementById("submit").disable = false
-var hayNum = false
 var completados = 0
 const regexNum = /^(?=.*\d)/
 const regexStr = /(?=.*[a-zA-Z])/
@@ -22,7 +21,7 @@ function comprobarNombre() {
     }
     else{
         mensaje.innerHTML = ""
-        
+        completados++
     }
 }
 
@@ -35,7 +34,7 @@ function comprobarMail() {
 
     else{
         mensaje2.innerHTML = ""
-        
+        completados++
     }
     
 }
@@ -50,6 +49,7 @@ if (regexCant.test(contra.value)) {
     mensaje3a.innerHTML = "Debe tener al menos 8 caracteres"
         console.log("funciona1")
         desactivarSubmit()
+        completados++
   }
   if (regexNum.test(contra.value)) {
     mensaje3b.innerHTML = ""
@@ -58,6 +58,7 @@ if (regexCant.test(contra.value)) {
     mensaje3b.innerHTML = "Debe tener al menos 1 número"
         console.log("funciona1")
         desactivarSubmit()
+        completados++
   }
   if (regexStr.test(contra.value)) {
     mensaje3c.innerHTML = ""
@@ -66,6 +67,7 @@ if (regexCant.test(contra.value)) {
     mensaje3c.innerHTML = "Debe tener al menos 1 letra"
         console.log("funciona1")
         desactivarSubmit()
+        completados++
   }
 }
 
@@ -77,7 +79,7 @@ function confirmarContraseña(){
     }
     else{
         mensaje4.innerHTML = ""
-        
+        completados++
     }
 
 }
@@ -88,9 +90,19 @@ function desactivarSubmit(){
 
 }
 
+function completado(){
+    if (completados = 6){
+        boton.disable = false
+    }
+    else{
+        boton.disable = true
+    }
+}
+
 function enviarForm(){
     if (boton.disable = false){
     mensajeFin.innerHTML="Enviado!!!"
     }
+    alert("Enviado con éxito!")
 }
 
